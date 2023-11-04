@@ -1,0 +1,16 @@
+<h1>Update Todo</h1>
+
+<div class="container" *ngIf="todo">
+  <fieldset class="form-group">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" id="description" [(ngModel)]="todo.description" class="form-control">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="date" class="form-label">date</label>
+    <input type="date" id="date" [ngModel]="todo.date | date:'yyyy-MM-dd'" (ngModelChange)="todo.date = $event"
+      class="form-control">
+  </fieldset>
+
+  <button class="btn btn-success mt-2" (click)="updateTodo()">Save</button>
+</div>
